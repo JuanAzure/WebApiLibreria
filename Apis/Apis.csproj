@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>b4dbd832-7171-4287-bd3b-fde2438102c5</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="LOGs\**" />
+    <Content Remove="LOGs\**" />
+    <EmbeddedResource Remove="LOGs\**" />
+    <None Remove="LOGs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="secrets.json" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="3.1.4" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Library.Data.Layer\Library.Data.EF.csproj" />
+    <ProjectReference Include="..\Library.Repo.SqlServer\Library.Repo.SqlServer.csproj" />
+    <ProjectReference Include="..\Repository.Pattern.EF\Repository.Pattern.EF.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+  </ItemGroup>
+
+
+</Project>
